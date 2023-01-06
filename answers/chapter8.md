@@ -30,3 +30,14 @@
     Context-based embeddings reinforce gender and racial biases present in the training data. For example the embedding of the word smart or beautiful should not have any gender preferences baked into it but if you ask a LM to describe someone smart or translate a sentence describing someone smart from a gender-neutral language to English for instance, it will prefer the pronoun he for smart and she for beautiful because in the context of other words in the training data smart is more associated with males and beauty with females. 
     
     Another issue can be that words with different meaning will have different embeddings which make it difficult for them to be used standalone.
+
+10. [M] BLEU is a popular metric for machine translation. What are the pros and cons of BLEU?
+
+    Pros:
+
+    1. It is widely used so different models can be compared with one another
+    2. It is easy to implement. It only needs the target and prediction to calculate the precision for different n-grams
+
+    Cons:
+
+    1. Does not consider semantics and only relies on same tokens this has two issues: it penalises translations that convey the same meaning but use different words. On the other hand, it doesn’t penalise translations that are semantically incorrect but have a lot of overlapping words
